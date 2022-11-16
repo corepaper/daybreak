@@ -1,8 +1,8 @@
 #[macro_use]
 extern crate serde_derive;
 
-use rustbreak::deser::{Ron, Yaml};
-use rustbreak::{backend::FileBackend, FileDatabase};
+use daybreak::deser::{Ron, Yaml};
+use daybreak::{backend::FileBackend, FileDatabase, Error as DaybreakError};
 
 #[derive(Eq, PartialEq, Debug, Serialize, Deserialize, Clone)]
 enum Country {
@@ -16,7 +16,7 @@ struct Person {
     country: Country,
 }
 
-fn do_main() -> Result<(), rustbreak::RustbreakError> {
+fn do_main() -> Result<(), DaybreakError> {
     use std::collections::HashMap;
 
     let db = FileDatabase::<HashMap<String, Person>, Ron>::load_from_path_or_default("test.ron")?;

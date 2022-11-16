@@ -14,8 +14,8 @@ extern crate serde_derive;
 #[macro_use]
 extern crate lazy_static;
 
-use rustbreak::deser::Ron;
-use rustbreak::FileDatabase;
+use daybreak::deser::Ron;
+use daybreak::FileDatabase;
 use std::default::Default;
 use std::path::PathBuf;
 

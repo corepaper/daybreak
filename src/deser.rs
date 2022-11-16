@@ -26,7 +26,7 @@ pub use self::bincode::Bincode;
 /// implementation can look like this:
 ///
 /// ```rust
-/// extern crate rustbreak;
+/// extern crate daybreak;
 /// extern crate thiserror;
 /// extern crate serde;
 /// #[macro_use]
@@ -35,8 +35,8 @@ pub use self::bincode::Bincode;
 /// use serde::Serialize;
 /// use std::io::Read;
 ///
-/// use rustbreak::deser::DeSerializer;
-/// use rustbreak::error;
+/// use daybreak::deser::DeSerializer;
+/// use daybreak::error;
 ///
 /// #[derive(Clone, Debug, thiserror::Error)]
 /// #[error("A frobnarizer could not splagrle.")]
@@ -57,11 +57,11 @@ pub use self::bincode::Bincode;
 /// where
 ///     for<'de> T: Deserialize<'de>,
 /// {
-///     fn serialize(&self, val: &T) -> rustbreak::DeSerResult<Vec<u8>> {
+///     fn serialize(&self, val: &T) -> daybreak::DeSerResult<Vec<u8>> {
 ///         Ok(to_frobnar(val))
 ///     }
 ///
-///     fn deserialize<R: Read>(&self, s: R) -> rustbreak::DeSerResult<T> {
+///     fn deserialize<R: Read>(&self, s: R) -> daybreak::DeSerResult<T> {
 ///         Ok(from_frobnar(&s).map_err(|e| error::DeSerError::Other(e.into()))?)
 ///     }
 /// }

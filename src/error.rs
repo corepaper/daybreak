@@ -19,7 +19,7 @@ pub enum DeSerError {
     /// An error occured with Bincode
     #[error("An error with Bincode occured")]
     Bincode(#[from] std::boxed::Box<bincode::ErrorKind>),
-    /// An internal error to Rustbreak occured
+    /// An internal error occured
     #[error("An internal error to rustbreak occured, please report it to the maintainers")]
     Internal(String),
     #[cfg(feature = "other_errors")]
@@ -43,7 +43,7 @@ pub enum BackendError {
     /// An I/O Error occured
     #[error("An I/O Error occured")]
     Io(#[from] std::io::Error),
-    /// An internal error to Rustbreak occured
+    /// An internal error occured
     #[error("An internal error to rustbreak occured, please report it to the maintainers")]
     Internal(String),
     #[cfg(feature = "other_errors")]
@@ -60,7 +60,7 @@ pub enum BackendError {
 /// The different kinds of errors that can be returned
 #[derive(Debug, thiserror::Error)]
 #[non_exhaustive]
-pub enum RustbreakError {
+pub enum Error {
     /// A context error when a DeSerialization failed
     #[error("Could not deserialize the value")]
     DeSerialization(#[from] DeSerError),
@@ -78,7 +78,7 @@ pub enum RustbreakError {
 }
 
 /// A simple type alias for errors
-pub type Result<T> = std::result::Result<T, RustbreakError>;
+pub type Result<T> = std::result::Result<T, Error>;
 /// The type alias used for backends
 pub type BackendResult<T> = std::result::Result<T, BackendError>;
 /// The type alias used for `DeSer`s

@@ -1,7 +1,7 @@
 #![feature(plugin, decl_macro, custom_derive)]
 #![plugin(rocket_codegen)]
 
-extern crate rustbreak;
+extern crate daybreak;
 extern crate rocket;
 extern crate rocket_contrib;
 #[macro_use] extern crate serde_derive;
@@ -13,8 +13,8 @@ use rocket::http::{Cookies, Cookie};
 use rocket::request::{self, Request, FromRequest, Form};
 use rocket::response::Redirect;
 use rocket_contrib::Template;
-use rustbreak::FileDatabase;
-use rustbreak::deser::Ron;
+use daybreak::FileDatabase;
+use daybreak::deser::Ron;
 
 // We create a type alias so that we always associate the same types to it
 type DB = FileDatabase<ServerData, Ron>;

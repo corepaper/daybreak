@@ -1,6 +1,6 @@
-use rustbreak::backend::Backend;
-use rustbreak::deser::{Bincode, DeSerializer, Ron, Yaml};
-use rustbreak::{Database, FileDatabase, MemoryDatabase, MmapDatabase, PathDatabase};
+use daybreak::backend::Backend;
+use daybreak::deser::{Bincode, DeSerializer, Ron, Yaml};
+use daybreak::{Database, FileDatabase, MemoryDatabase, MmapDatabase, PathDatabase};
 use std::fmt::Debug;
 use std::ops::Deref;
 use tempfile::tempfile;
