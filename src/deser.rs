@@ -102,7 +102,7 @@ mod ron {
             Ok(to_ron_string(val, PrettyConfig::default()).map(String::into_bytes)?)
         }
         fn deserialize<R: Read>(&self, s: R) -> error::DeSerResult<T> {
-            Ok(from_ron_string(s)?)
+            Ok(from_ron_string(s).map_err(|e| e.code)?)
         }
     }
 }
