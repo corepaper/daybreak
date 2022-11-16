@@ -10,7 +10,7 @@ license = "MPL-2.0"
 name = "daybreak"
 readme = "README.md"
 repository = "https://github.com/corepaper/daybreak"
-version = "1.0.0"
+version = "0.1.0"
 
 [package.metadata.docs.rs]
 all-features = true
